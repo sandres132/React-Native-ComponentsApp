@@ -1,8 +1,7 @@
 import { View, Text } from 'react-native';
 import { globalStyles } from '../../../config/theme/Theme';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Title } from '../../components/ui/Title';
-import { MenuItem } from '../../components/ui/MenuItem';
+import { Title, MenuItem } from '../../components';
 
 const animationMenuItems = [
     {
@@ -85,19 +84,6 @@ export const HomeScreen = () => {
                             />
                         ))
                     }
-                    
-                    <View style={{ marginTop: 30 }}/>
-
-                    {
-                        menuItems.map( (item, index) => (
-                            <MenuItem
-                                key={ item.component }
-                                { ...item }
-                                isFirst={ index === 0 }
-                                isLast={ index === menuItems.length -1 }
-                            />
-                        ))
-                    }
 
                     <View style={{ marginTop: 30 }}/>
 
@@ -108,6 +94,19 @@ export const HomeScreen = () => {
                                 { ...item }
                                 isFirst={ index === 0 }
                                 isLast={ index === uiMenuItems.length -1 }
+                            />
+                        ))
+                    }
+                    
+                    <View style={{ marginTop: 30 }}/>
+
+                    {
+                        menuItems.map( (item, index) => (
+                            <MenuItem
+                                key={ item.component }
+                                { ...item }
+                                isFirst={ index === 0 }
+                                isLast={ index === menuItems.length -1 }
                             />
                         ))
                     }
