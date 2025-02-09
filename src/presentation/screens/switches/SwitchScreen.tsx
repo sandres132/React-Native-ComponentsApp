@@ -11,9 +11,10 @@ export const SwitchScreen = () => {
         isHungry: false,
         isHappy: true
     })
+    
 
     return (
-        <CustomView style={{ marginTop: 100, paddingHorizontal: 10 }}>
+        <CustomView style={{ paddingTop: 100, paddingHorizontal: 10 }}>
             <Card>
                 <CustomSwitch
                     isOn={ state.isActive }

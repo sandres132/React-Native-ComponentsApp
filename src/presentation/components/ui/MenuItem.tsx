@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import { colors } from '../../../config/theme/Theme';
 import { Ionicon } from '../../icons/IonIcons';
 import { useNavigation } from '@react-navigation/native';
 import { Separator } from './Separator';
+import { ThemeContext } from '../../context/ThemeContext';
 
 interface Props {
     name: string;
@@ -16,6 +16,7 @@ interface Props {
 export const MenuItem = ( { name, icon, component, isFirst = false, isLast = false }:Props ) => {
 
     const navigation = useNavigation<any>();
+    const { colors } = useContext( ThemeContext );
 
     return (
         <>

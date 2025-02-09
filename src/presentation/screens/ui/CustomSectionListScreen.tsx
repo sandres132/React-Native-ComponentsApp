@@ -1,7 +1,8 @@
 import { View, Text, SectionList, useWindowDimensions } from 'react-native';
 import { Card, CustomView, Separator, SubTitle, Title } from '../../components';
-import { colors } from '../../../config/theme/Theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 
 
 interface Houses {
@@ -90,6 +91,7 @@ export const CustomSectionListScreen = () => {
 
     const { height } = useWindowDimensions();
     const { top } = useSafeAreaInsets();
+    const { colors } = useContext( ThemeContext );
 
     return (
         <CustomView>
@@ -99,7 +101,7 @@ export const CustomSectionListScreen = () => {
                 <SectionList
                     sections={ houses }
                     keyExtractor={ (item, index) => item + index }
-                    renderItem={ ({ item }) => <Text style={{ marginVertical: 2 }}>{ item }</Text> }
+                    renderItem={ ({ item }) => <Text style={{ marginVertical: 2, color: colors.text }}>{ item }</Text> }
                     // showsVerticalScrollIndicator={ false }
                     renderSectionHeader={ ({ section }) => <SubTitle
                                                                 text={ section.title }
