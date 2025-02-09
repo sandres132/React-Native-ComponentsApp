@@ -36,6 +36,10 @@ export const ChangeThemeScreen = () => {
                 { JSON.stringify( colors, null, 2) }
             </Text>
 
+            <Text style={{ color: colors.text }}>isLight: { currentTheme === 'light' ? 'true' : 'false' }</Text>
+            <Text style={{ color: colors.text }}>isDark: { currentTheme === 'dark' ? 'true' : 'false' }</Text>
+            <Text style={{ color: colors.text }}>isCustom: { currentTheme === 'custom' ? 'true' : 'false' }</Text>
+
         </CustomView>
     )
 }
