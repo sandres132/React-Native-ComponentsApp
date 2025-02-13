@@ -8,7 +8,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 
 export const AlertScreen = () => {
 
-    const { isCustom, isDark, isLight } = useContext( ThemeContext );
+    const { isDark } = useContext( ThemeContext );
 
     const createTwoButtonAlert = () =>{
         Alert.alert('Alert Title', 'My Alert Msg', [
@@ -36,7 +36,7 @@ export const AlertScreen = () => {
             },
             {text: 'OK', onPress: () => console.log('OK Pressed')},
         ], {
-            userInterfaceStyle: isCustom ? 'unspecified' : isDark ? 'dark' : 'light' //solo para IOS
+            userInterfaceStyle: isDark ? 'dark' : 'light' //solo para IOS
         });
     };
 
