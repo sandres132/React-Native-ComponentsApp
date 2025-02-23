@@ -1,4 +1,4 @@
-package com.componentsapp
+package com.andressorto.rncomponentsapp
 
 import android.os.Bundle;
 
